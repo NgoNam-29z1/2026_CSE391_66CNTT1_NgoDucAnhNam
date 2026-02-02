@@ -40,9 +40,5 @@ Sinh viên thường thực hành thông qua: - Làm việc nhóm trên GitHub
 - Thiết kế layout, form, validation bằng JS
 - Tổ chức cấu trúc project chuẩn
 
-Ví dụ các thao tác Git cơ bản: - git add
-- git commit
-- git push
-- git pull
 
 ------------------------------------------------------------------------
