@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 04 - Form Nhân Viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Định dạng các tiêu đề mục (Basic Info, Contact Info...) */
+        .section-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        /* Dòng chứa nhãn và ô input */
+        .form-row {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-start; /* Căn lề trên */
+        }
+
+        /* Cột nhãn bên trái */
+        .label-col {
+            width: 180px;
+            font-weight: bold;
+            font-size: 0.9em;
+            padding-top: 5px;
+        }
+
+        /* Cột input bên phải */
+        .input-col {
+            flex: 1;
+        }
+
+        /* Định dạng chung cho các ô input */
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box; /* Để padding không làm vỡ layout */
+            border: 1px solid #ccc;
+        }
+
+        /* Riêng cho phần Radio button (Gender) */
+        .radio-group label {
+            display: block;
+            font-weight: normal;
+            margin-bottom: 3px;
+        }
+
+        /* Phần soạn thảo văn bản giả lập */
+        .editor-container {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .editor-toolbar {
+            background-color: #f0f0f0;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 5px;
+            font-size: 0.8em;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: none;
+            resize: vertical;
+        }
+
+        /* Định dạng CAPTCHA */
+        .captcha-text {
+            font-family: "Courier New", monospace;
+            font-size: 24px;
+            letter-spacing: 5px;
+            font-weight: bold;
+            background: #eee;
+            display: inline-block;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+        }
+
+        /* Footer buttons */
+        .form-footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        .btn-submit {
+            background-color: #eee;
+            border: 1px solid #999;
+        }
+        .btn-cancel {
+            background-color: #333;
+            color: white;
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form action="#" method="post">
+        
+        <div class="section-title">Basic Info</div>
+
+        <div class="form-row">
+            <div class="label-col">Employee ID</div>
+            <div class="input-col">9</div> </div>
+
+        <div class="form-row">
+            <div class="label-col">Last Name</div>
+            <div class="input-col">Dodsworth</div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">First Name</div>
+            <div class="input-col">
+                <input type="text" name="firstname" value="Anne">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Gender</div>
+            <div class="input-col radio-group">
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="xxx"> XXX</label>
+                <label><input type="radio" name="gender" value="zzz" checked> ZZZ</label>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Title</div>
+            <div class="input-col">
+                <input type="text" name="title" value="Sales Representative">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Suffix</div>
+            <div class="input-col">
+                <input type="text" name="suffix" value="Ms.">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">BirthDate</div>
+            <div class="input-col">
+                <input type="text" name="birthdate" value="1969-07-02 00:00:00">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">HireDate</div>
+            <div class="input-col">
+                <input type="text" name="hiredate" value="1994-11-15 00:00:00">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">SSN # (if applicable)</div>
+            <div class="input-col">
+                <input type="text" name="ssn">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Reports To</div>
+            <div class="input-col">
+                <select name="reports_to">
+                    <option value="buchanan" selected>Buchanan</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="section-title">Contact Info</div>
+
+        <div class="form-row">
+            <div class="label-col">Email</div>
+            <div class="input-col">
+                <input type="email" name="email" placeholder="name@example.com">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Address</div>
+            <div class="input-col">
+                <input type="text" name="address" value="7 Houndstooth Rd.">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">City</div>
+            <div class="input-col">
+                <input type="text" name="city" value="London">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Region</div>
+            <div class="input-col">
+                <input type="text" name="region">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Postal Code</div>
+            <div class="input-col">
+                <input type="text" name="postal_code" value="WG2 7LT">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Country</div>
+            <div class="input-col">
+                <select name="country">
+                    <option value="russia" selected>Russian Federation</option>
+                    <option value="usa">USA</option>
+                    <option value="vn">Vietnam</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">US Home Phone</div>
+            <div class="input-col">
+                <input type="text" name="phone" value="(234)234-2342">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Photo</div>
+            <div class="input-col">
+                <input type="text" name="photo" value="EmpID9.bmp">
+            </div>
+        </div>
+
+        <div class="section-title">Optional Info</div>
+
+        <div class="form-row">
+            <div class="label-col">Notes</div>
+            <div class="input-col">
+                <div class="editor-container">
+                    <div class="editor-toolbar">
+                        <b>B</b> <i>I</i> <u>U</u> &nbsp; | &nbsp; Align Left Center Right
+                    </div>
+                    <textarea name="notes">Anne has a BA degree in English from St. Lawrence College. She is fluent in French and German.ZZZ</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Preferred Shift</div>
+            <div class="input-col">
+                <label style="margin-right: 15px;"><input type="checkbox" name="shift" value="regular"> Regular</label>
+                <label><input type="checkbox" name="shift" value="gravy_yard" checked> Gravy Yard</label>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Active?</div>
+            <div class="input-col">
+                <input type="checkbox" name="active" checked>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="label-col">Are you human?</div>
+            <div class="input-col">
+                <div class="captcha-text">TIDAWO</div>
+                <div style="font-size: 0.8em; color: gray; margin-bottom: 5px;">Click to change</div>
+                <input type="text" name="captcha" style="width: 100%;">
+                <div style="font-size: 0.8em; color: red;">required</div>
+            </div>
+        </div>
+
+        <div class="form-footer">
+            <button type="submit" class="btn btn-submit">Submit</button>
+            <button type="button" class="btn btn-cancel">Cancel</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
