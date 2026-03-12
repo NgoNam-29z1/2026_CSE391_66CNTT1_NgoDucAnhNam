@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1.1</title>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+    <div id="board">
+        <form class="data" onsubmit="return false;">
+            <div class="data__row">
+                <label class="data__label">Họ Tên: </label>
+                <input id="nameInput" class="data__input name" type="text">
+            </div>
+            <div class="data__row">
+                <label class="data__label">Điểm: </label>
+                <input id="scoreInput" class="data__input score" type="text">
+            </div>
+        </form>
+
+        <button class="btn--add">+ Thêm</button>
+
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ Tên</th>
+                    <th>Điểm</th>
+                    <th>Xếp hạng</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentTable"></tbody>
+        </table>
+
+         <p id="stats"></p>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
