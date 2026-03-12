@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý điểm sinh viên K66</title>
+    <style>
+        .container { width: 80%; margin: 20px auto; font-family: Arial, sans-serif; }
+        .form-group { margin-bottom: 15px; }
+        .controls { display: flex; gap: 10px; margin: 20px 0; padding: 10px; background: #f4f4f4; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        th.sortable { cursor: pointer; color: blue; }
+        .low-score { background-color: yellow; }
+        #statistics { margin-top: 15px; font-weight: bold; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>QUẢN LÝ ĐIỂM SINH VIÊN</h2>
+        
+        <div class="form-group">
+            <input type="text" id="txtName" placeholder="Họ tên sinh viên">
+            <input type="number" id="txtScore" placeholder="Điểm (0-10)" step="0.1">
+            <button id="btnAdd">Thêm sinh viên</button>
+        </div>
+
+        <hr>
+
+        <div class="controls">
+            <input type="text" id="searchName" placeholder="Tìm theo tên...">
+            <select id="filterRank">
+                <option value="All">-- Tất cả xếp loại --</option>
+                <option value="Giỏi">Giỏi (>= 8.5)</option>
+                <option value="Khá">Khá (>= 7.0)</option>
+                <option value="Trung bình">Trung bình (>= 5.0)</option>
+                <option value="Yếu">Yếu (< 5.0)</option>
+            </select>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th id="sortScore" class="sortable">Điểm <span id="sortIcon">▲▼</span></th>
+                    <th>Xếp loại</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="studentBody"></tbody>
+        </table>
+
+        <div id="statistics"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
