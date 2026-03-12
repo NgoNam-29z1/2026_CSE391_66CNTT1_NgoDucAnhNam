@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Về Nhà 1 & 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 id="tieuDeBuoc">Bước 1 / 3: Thông tin cá nhân</h2>
+        
+        <form id="formDangKy">
+            <div id="buoc1">
+                <label>Họ tên: <span id="demKyTu" style="font-weight: normal; color: gray;">0/50</span></label>
+                <input type="text" id="hoTen" maxlength="50" placeholder="Nhập họ tên...">
+                <small id="loiHoTen" class="loi"></small>
+
+                <label>Ngày sinh:</label>
+                <input type="date" id="ngaySinh">
+                <small id="loiNgaySinh" class="loi"></small>
+
+                <label>Giới tính:</label>
+                <select id="gioiTinh">
+                    <option value="">-- Chọn --</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+                <small id="loiGioiTinh" class="loi"></small>
+            </div>
+
+            <div id="buoc2" style="display: none;">
+                <label>Email:</label>
+                <input type="text" id="email" placeholder="Nhập email...">
+                <small id="loiEmail" class="loi"></small>
+
+                <label>Mật khẩu: <button type="button" id="btnHienMatKhau">👁 Hiện</button></label>
+                <input type="password" id="matKhau" placeholder="Nhập mật khẩu...">
+                
+                <div style="background-color: #eee; height: 5px; margin-top: 5px;">
+                    <div id="thanhSucManh" style="height: 5px; width: 0%; transition: 0.3s;"></div>
+                </div>
+                <small id="chuSucManh" style="font-weight: bold;"></small>
+                <small id="loiMatKhau" class="loi"></small>
+
+                <label>Nhập lại mật khẩu:</label>
+                <input type="password" id="nhapLaiMatKhau">
+                <small id="loiNhapLai" class="loi"></small>
+            </div>
+
+            <div id="buoc3" style="display: none;">
+                <h3>Xác nhận thông tin đã nhập:</h3>
+                <p><b>Họ tên:</b> <span id="xacNhanHoTen"></span></p>
+                <p><b>Ngày sinh:</b> <span id="xacNhanNgaySinh"></span></p>
+                <p><b>Giới tính:</b> <span id="xacNhanGioiTinh"></span></p>
+                <p><b>Email:</b> <span id="xacNhanEmail"></span></p>
+            </div>
+
+            <br>
+            <button type="button" id="btnQuayLai" style="display: none;">Quay lại</button>
+            <button type="button" id="btnTiepTheo">Tiếp theo</button>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
